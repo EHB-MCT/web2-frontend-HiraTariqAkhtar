@@ -22,16 +22,29 @@ async function fetchSerial (){
 
 
 async function fetchActor (){
-    // Sajal Ali 
-    let response = await fetch("https://api.themoviedb.org/3/person/1254942?api_key=daf4ffe88f06bba73b59069934fc3b37")
+    // Iqra Aziz
+    let response = await fetch("https://api.themoviedb.org/3/person/2058151?api_key=daf4ffe88f06bba73b59069934fc3b37")
     return await response.json()
     .then (data => {
         console.log(data)
         let string = `<div class="actor" id="${data.id}">
-        <h2 class="title"> ${data.name}</h2></div>`
+        <h1 class="title"> ${data.name}</h1>
+        <div class ="pic_detail">
+        <img src="https://image.tmdb.org/t/p/w300${data.profile_path}">
+       <div class="details"> 
+       <h4> Date of Birth: </h4>
+        <p> ${data.birthday} </p> 
+        <h4> Place of Birth: </h4>
+        <p>${data.place_of_birth} </p> 
+        <h4> Biography: </h4>
+        <p> ${data.biography} </p>
+        </div>
+        </div>
+        </div>`
         let content = document.getElementById("actorData")
         content.insertAdjacentHTML("beforeend", string)
         })
+    let actorDetail = await fetch("https://api.themoviedb.org/3/person/{person_id}/tv_credits?api_key=<<api_key>>&language=en-US")
 }
 fetchSerial()
 fetchActor()
