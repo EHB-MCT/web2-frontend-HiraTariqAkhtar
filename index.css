@@ -2,6 +2,10 @@ body {
   font-family: Helvetica;
 }
 
+.title {
+  color: #2458a3;
+}
+
 #topNav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,10 +40,6 @@ body {
       flex-wrap: wrap;
 }
 
-#serialData .title {
-  color: #2458a3;
-}
-
 #serialData img {
   margin: 0 1em 0.5em;
 }
@@ -51,5 +51,19 @@ body {
 
 #serialData p, #serialData h2 {
   text-align: center;
+}
+
+#actorData .pic_detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#actorData .pic_detail .details {
+  margin-left: 2em;
+}
+
+#actorData .pic_detail .details p {
+  max-width: 100ch;
 }
 /*# sourceMappingURL=index.css.map */
