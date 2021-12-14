@@ -1,0 +1,55 @@
+body {
+  font-family: Helvetica;
+}
+
+#topNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#topNav img {
+  width: 45%;
+}
+
+#topNav ul a {
+  padding: 1em;
+  text-decoration: none;
+  color: #f2c853;
+}
+
+#topNav input {
+  width: 20em;
+  height: 3em;
+  border: 2px solid #f2c853;
+  border-radius: 25px;
+}
+
+#serialData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#serialData .title {
+  color: #2458a3;
+}
+
+#serialData img {
+  margin: 0 1em 0.5em;
+}
+
+#serialData .drama {
+  margin: 1em;
+  border: 2px solid #2458a3;
+}
+
+#serialData p, #serialData h2 {
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */

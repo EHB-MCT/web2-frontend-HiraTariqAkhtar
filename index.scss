@@ -1,0 +1,54 @@
+///// KLEUREN /////
+$blue : #2458a3;
+$yellow: #f2c853;
+$green: #3be23f;
+
+///// GENERAL CSS /////
+body{
+    font-family: Helvetica;
+}
+#topNav{
+    display: flex;
+    justify-content: space-between;
+
+    img{
+        width: 45%;
+    }
+
+    ul{
+        a{
+        padding: 1em;
+        text-decoration: none;
+        color: $yellow;
+        }
+    }
+
+    input{
+        width: 20em;
+        height: 3em;
+        border: 2px solid $yellow;
+        border-radius: 25px;
+    }
+}
+
+#serialData{
+    display: flex;
+    flex-wrap: wrap;
+
+    .title{
+        color: $blue;
+    }
+
+    img{
+        margin: 0 1em 0.5em
+    }
+    
+    .drama {
+        margin: 1em;
+        border: 2px solid $blue;
+    }
+    
+    p, h2 {
+        text-align: center;
+    }
+}
