@@ -12,6 +12,10 @@ body{
     color: $blue;
 }
 
+.flex {
+    display: flex;
+}
+
 ///// NAVIGATION /////
 #topNav{
     display: flex;
@@ -41,10 +45,7 @@ body{
 ///// DATA /////
 
 #serialData{
-    display: flex;
     flex-wrap: wrap;
-
-
 
     img{
         margin: 0 1em 0.5em
@@ -61,14 +62,20 @@ body{
 }
 
 #actorData{
-    .pic_detail{
-        display: flex;
-
-        .details{
+    .details{
             margin-left: 2em;
             p{
                 max-width: 100ch;
             }
         }
+}
+
+#allDramas {
+    flex-wrap: wrap;
+    .drama{
+        margin: 1em;
+        border: 2px solid $blue;
+        text-align: center;
+        padding: 1em;
     }
 }

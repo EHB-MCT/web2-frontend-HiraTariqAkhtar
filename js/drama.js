@@ -50,7 +50,37 @@ async function fetchActor (){
         </div>`
         let content = document.getElementById("actorData")
         content.insertAdjacentHTML("beforeend", string)
+        let title =`<h1 class = "title"> Filmography: </h1>`
+        content.insertAdjacentHTML("beforeend", title)
+        fetchFilmography()
         })
+}
+
+async function fetchFilmography(){
+    let res = await fetch("https://api.themoviedb.org/3/person/2058151/tv_credits?api_key=daf4ffe88f06bba73b59069934fc3b37")
+    return await res.json()
+    .then (data => {
+        //console.log(data);
+        let filmography = data.cast
+        console.log(filmography);
+        filmography.forEach(drama => {
+            let info = `
+            <div class="drama" id="${drama.id}">
+            <div>
+            <h2 class="title"> ${drama.name}</h2>
+            <p> <b>First episode :</b> ${drama.first_air_date} </p>
+            <p> <b>Number of episodes :</b> ${drama.episode_count} </p>
+            <p> <b>Character name :</b> ${drama.character} </p>
+            <a href ="details.html"> <img src="https://image.tmdb.org/t/p/w200${drama.poster_path}"></a>
+            </div>
+            </div>`
+
+            let content = document.getElementById("allDramas")
+            content.insertAdjacentHTML("beforeend", info)
+    
+        })
+        
+    })
 }
 
 

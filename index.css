@@ -6,6 +6,12 @@ body {
   color: #2458a3;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #topNav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,9 +39,6 @@ body {
 }
 
 #serialData {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -53,17 +56,23 @@ body {
   text-align: center;
 }
 
-#actorData .pic_detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#actorData .pic_detail .details {
+#actorData .details {
   margin-left: 2em;
 }
 
-#actorData .pic_detail .details p {
+#actorData .details p {
   max-width: 100ch;
+}
+
+#allDramas {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#allDramas .drama {
+  margin: 1em;
+  border: 2px solid #2458a3;
+  text-align: center;
+  padding: 1em;
 }
 /*# sourceMappingURL=index.css.map */
