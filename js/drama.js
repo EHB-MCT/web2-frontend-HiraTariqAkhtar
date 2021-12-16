@@ -18,11 +18,12 @@ async function fetchSerial (page){
             let html = `<div class="drama" id="${serial.id}">
             <h2 class="title"> ${serial.name}</h2>
             <p> <b>First episode :</b> ${serial.first_air_date} </p>
-            <a href ="details.html"> <img src="https://image.tmdb.org/t/p/w200${serial.poster_path}"></a>
+            <a href ="details.html"> <img src="https://image.tmdb.org/t/p/w200${serial.poster_path}" id = "details"></a>
             </div>`
             
             let content = document.getElementById("serialData")
             content.insertAdjacentHTML("beforeend", html)
+
         })
 })
 }
@@ -52,39 +53,51 @@ async function fetchActor (){
         content.insertAdjacentHTML("beforeend", string)
         let title =`<h1 class = "title"> Filmography: </h1>`
         content.insertAdjacentHTML("beforeend", title)
-        fetchFilmography()
+        fetchFilmography(data.id)
         })
 }
 
-async function fetchFilmography(){
-    let res = await fetch("https://api.themoviedb.org/3/person/2058151/tv_credits?api_key=daf4ffe88f06bba73b59069934fc3b37")
+async function fetchFilmography(id){
+    let res = await fetch(`https://api.themoviedb.org/3/person/${id}/tv_credits?api_key=daf4ffe88f06bba73b59069934fc3b37`)
     return await res.json()
     .then (data => {
         //console.log(data);
         let filmography = data.cast
         console.log(filmography);
-        filmography.forEach(drama => {
+        let filtered = filmography.filter(drama => drama.poster_path != null && drama.first_air_date != "")
+        filtered.forEach(drama => {
             let info = `
             <div class="drama" id="${drama.id}">
-            <div>
             <h2 class="title"> ${drama.name}</h2>
             <p> <b>First episode :</b> ${drama.first_air_date} </p>
             <p> <b>Number of episodes :</b> ${drama.episode_count} </p>
             <p> <b>Character name :</b> ${drama.character} </p>
-            <a href ="details.html"> <img src="https://image.tmdb.org/t/p/w200${drama.poster_path}"></a>
-            </div>
+            <a href ="details.html" > <img src="https://image.tmdb.org/t/p/w200${drama.poster_path}" ></a>  
             </div>`
 
             let content = document.getElementById("allDramas")
             content.insertAdjacentHTML("beforeend", info)
-    
         })
         
     })
 }
 
 
+async function fetchDramaDetails(id){
+    let res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=daf4ffe88f06bba73b59069934fc3b37`)
+    return await res.json()
+    .then (data => {
+        console.log(data);
+        let details = `<div class="drama" id="${data.id}">
+        <h1 class="title"> ${data.name}</h1>
+        <p> <b>First episode :</b> ${data.first_air_date} </p>
+        </div>`
+        let content = document.getElementById("detailData")
+        content.insertAdjacentHTML("beforeend", details)
+    })
+}
 
 
 loopSerial()
 fetchActor()
+fetchDramaDetails(39907)
