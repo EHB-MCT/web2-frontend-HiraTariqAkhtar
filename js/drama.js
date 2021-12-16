@@ -91,6 +91,7 @@ async function fetchDramaDetails(id){
         let details = `<div class="drama" id="${data.id}">
         <h1 class="title"> ${data.name}</h1>
         <p> <b>First episode :</b> ${data.first_air_date} </p>
+        <p> <b>Network :</b> ${data.networks[0].name} </p>
         </div>`
         let content = document.getElementById("detailData")
         content.insertAdjacentHTML("beforeend", details)
