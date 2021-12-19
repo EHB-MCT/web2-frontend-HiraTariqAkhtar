@@ -8,8 +8,10 @@ Used sources - Frontend
 => get all drama's : https://developers.themoviedb.org/3/discover/tv-discover
 => get details of an actor by id : https://developers.themoviedb.org/3/people/get-person-details
 => get filmography of an actor by id : https://developers.themoviedb.org/3/people/get-person-tv-credits
+=> get cast of a drama by id : https://developers.themoviedb.org/3/tv/get-tv-credits
 
-=> show all wanted resiults : herhalingsoefening DevII
+
+=> show all wanted results : herhalingsoefening DevII
     => link to repo : https://github.com/EHB-MCT/herhalingsoefening-HiraTariqAkhtar.git
 
 
