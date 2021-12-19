@@ -44,24 +44,20 @@ body{
 
 ///// DATA /////
 
-#serialData{
+#serialData, #allDramas, #cast{
     flex-wrap: wrap;
 
-    img{
-        margin: 0 1em 0.5em
-    }
     
-    .drama {
+    .drama, .actor {
         margin: 1em;
         border: 2px solid $blue;
-    }
-    
-    p, h2 {
         text-align: center;
+        padding: 1em;
     }
+
 }
 
-#actorData{
+#actorData, #detailData{
     .details{
             margin-left: 2em;
             p{
@@ -70,12 +66,3 @@ body{
         }
 }
 
-#allDramas {
-    flex-wrap: wrap;
-    .drama{
-        margin: 1em;
-        border: 2px solid $blue;
-        text-align: center;
-        padding: 1em;
-    }
-}
