@@ -21,7 +21,7 @@ Used sources - Frontend
 
 
 ////// OPEN IN NEW PAGE //////
-=> Web I 
+=> Web I lecture 2 (PPT)
 
 ////// GET DATE //////
 => https://www.w3schools.com/js/js_date_methods.asp
