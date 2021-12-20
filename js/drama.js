@@ -30,7 +30,7 @@ async function fetchSerial (page){
 
 
 async function fetchActor (id){
-    // Iqra Aziz
+    // for actress Iqra Aziz
     let response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=daf4ffe88f06bba73b59069934fc3b37`)
     return await response.json()
     .then (data => {
@@ -51,7 +51,7 @@ async function fetchActor (id){
         </div>`
         let content = document.getElementById("actorData")
         content.insertAdjacentHTML("beforeend", string)
-        let title =`<h1 class = "title"> Filmography: </h1>`
+        let title =`<h2 class = "title"> Filmography: </h2>`
         content.insertAdjacentHTML("beforeend", title)
         fetchFilmography(data.id)
         })
@@ -68,7 +68,7 @@ async function fetchFilmography(id){
         filtered.forEach(drama => {
             let info = `
             <div class="drama" id="${drama.id}">
-            <h2 class="title"> ${drama.name}</h2>
+            <h3 class="title"> ${drama.name}</h3>
             <p> <b>First episode :</b> ${drama.first_air_date} </p>
             <p> <b>Number of episodes :</b> ${drama.episode_count} </p>
             <p> <b>Character name :</b> ${drama.character} </p>
@@ -84,10 +84,11 @@ async function fetchFilmography(id){
 
 
 async function fetchDramaDetails(id){
+    // for drama Suno Chanda
     let res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=daf4ffe88f06bba73b59069934fc3b37`)
     return await res.json()
     .then (data => {
-        console.log(data);
+        //console.log(data);
         let details = `<div class="drama" id="${data.id}">
         <h1 class="title"> ${data.name}</h1>
         <div class ="flex">
@@ -97,7 +98,7 @@ async function fetchDramaDetails(id){
        <p> <b>Last episode :</b> ${data.last_air_date} </p>
        <p> <b>Status :</b> ${data.status}</p>
        <p> <b>Production company :</b> ${data.production_companies[0].name} </p>
-       <p> <b>Network :</b> <a href ="${data.homepage}">${data.networks[0].name}</a> </p>
+       <p> <b>Network :</b> <a href ="${data.homepage}" target = "_blank">${data.networks[0].name}</a> </p>
        <p> <b>Number of episodes :</b> ${data.number_of_episodes}</p>
        <p> <b>About :</b> ${data.overview} </p>
         </div>
@@ -105,7 +106,7 @@ async function fetchDramaDetails(id){
         </div>`
         let content = document.getElementById("detailData")
         content.insertAdjacentHTML("beforeend", details)
-        let title =`<h1 class = "title"> Cast: </h1>`
+        let title =`<h2 class = "title"> Cast: </h2>`
         content.insertAdjacentHTML("beforeend", title)
         fetchCast(data.id)
     })
@@ -117,20 +118,20 @@ async function fetchCast(id){
     .then (data => {
         //console.log(data);
         let cast = data.cast
-        console.log(cast);
+        //console.log(cast);
         cast.forEach(actor => {
             let info = `
             <div class="actor" id="${actor.id}">
-            <h2 class="title"> ${actor.name}</h2>
+            <h3 class="title"> ${actor.name}</32>
             <p> <b>Character name :</b> ${actor.character} </p>
             <a href ="details.html" > <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" ></a>  
             </div>`
             let content = document.getElementById("cast")
             content.insertAdjacentHTML("beforeend", info)
         })
-        
     })
 }
+
 
 
 loopSerial()
