@@ -8,23 +8,27 @@
     <script type="module" src="/js/drama.js"></script>
 </head>
 <body>
-    <div id="topNav">
-        <a href="index.html"><img src="/logo.png"></a>
-        <nav>
+    <header>
+        <div id="topNav" class="flex">
+            <a href="index.html"><img src="/logo.png"></a>
+            <nav>
+                <ul>
+                    <a href="drama.html">Drama's</a>
+                    <a href="actor.html">Actors/Actresses</a>
+                    <a href="fav.html">Favourites</a>
+                </ul>
+            </nav>
+            <input type="text" placeholder="Search">
             <ul>
-                <a href="/html/drama.html">Drama's</a>
-                <a href="/html/actor.html">Actors/Actresses</a>
-            </ul>
-        </nav>
-        <input type="text" placeholder="Search">
-        <nav>
-            <ul>
-                <a href="/html/login.html">Login</a>
+                <a href="login.html">Login</a>
                 <a href="register.html">Register</a>
             </ul>
-        </nav>
-    </div>
-    <div id="detailData"></div>
-    <div id="cast" class="flex"></div>
+        </div>
+    </header>
+    <main>
+        
+        <div id="detailData"></div>
+        <div id="cast" class="flex"></div>
+    </main>
 </body>
 </html>
