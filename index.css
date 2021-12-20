@@ -21,8 +21,12 @@ body {
           justify-content: space-between;
 }
 
-#topNav img {
-  width: 45%;
+#topNav a {
+  width: 15%;
+}
+
+#topNav a img {
+  width: 100%;
 }
 
 #topNav ul a {
@@ -50,11 +54,15 @@ body {
   padding: 1em;
 }
 
-#actorData .details, #detailData .details {
+#actorData .flex img, #detailData .flex img, #new .flex img {
+  margin-bottom: 2em;
+}
+
+#actorData .details, #detailData .details, #new .details {
   margin-left: 2em;
 }
 
-#actorData .details p, #detailData .details p {
+#actorData .details p, #detailData .details p, #new .details p {
   max-width: 100ch;
 }
 /*# sourceMappingURL=index.css.map */

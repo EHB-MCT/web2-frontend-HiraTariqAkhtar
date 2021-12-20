@@ -20,10 +20,13 @@ body{
 #topNav{
     display: flex;
     justify-content: space-between;
-
-    img{
-        width: 45%;
+    a{
+        width: 15%;
+        img{
+            width: 100%;
+        }
     }
+
 
     ul{
         a{
@@ -57,7 +60,12 @@ body{
 
 }
 
-#actorData, #detailData{
+#actorData, #detailData, #new{
+    .flex{
+        img{
+            margin-bottom: 2em;
+        }
+    }
     .details{
             margin-left: 2em;
             p{
@@ -65,4 +73,5 @@ body{
             }
         }
 }
+
 
