@@ -18,3 +18,10 @@ Used sources - Frontend
 ////// FETCH WITH ASYNC/AWAIT //////
 => WebII session 3 ex b : time wasted app
 => link to my repo : https://github.com/EHB-MCT/web2-exercises-HiraTariqAkhtar.git
+
+
+////// OPEN IN NEW PAGE //////
+=> Web I 
+
+////// GET DATE //////
+=> https://www.w3schools.com/js/js_date_methods.asp
