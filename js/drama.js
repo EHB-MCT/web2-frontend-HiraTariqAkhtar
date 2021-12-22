@@ -30,7 +30,6 @@ async function fetchSerial (page){
 
 
 async function fetchActor (id){
-    // for actress Iqra Aziz
     let response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=daf4ffe88f06bba73b59069934fc3b37`)
     return await response.json()
     .then (data => {
@@ -84,7 +83,6 @@ async function fetchFilmography(id){
 
 
 async function fetchDramaDetails(id){
-    // for drama Suno Chanda
     let res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=daf4ffe88f06bba73b59069934fc3b37`)
     return await res.json()
     .then (data => {
@@ -106,12 +104,31 @@ async function fetchDramaDetails(id){
         </div>`
         let content = document.getElementById("detailData")
         content.insertAdjacentHTML("beforeend", details)
-        let title =`<h2 class = "title"> Cast: </h2>`
+        let title =`<h2 class = "title"> Cast and crew: </h2>`
         content.insertAdjacentHTML("beforeend", title)
+        fetchCrew(data.id)
         fetchCast(data.id)
     })
 }
 
+async function fetchCrew(id){
+    let res = await fetch(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=daf4ffe88f06bba73b59069934fc3b37`)
+    return await res.json()
+    .then (data => {
+        let crew = data.crew
+        //console.log(crew)
+        crew.forEach(person => {
+            let info = `
+            <div class="details" id="${person.id}">
+            <p> <b>${person.job} :</b> ${person.name} </p>
+            </div>`
+            let content = document.getElementById("crew")
+            content.insertAdjacentHTML("beforeend", info)
+
+        })
+    })
+
+}
 async function fetchCast(id){
     let res = await fetch(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=daf4ffe88f06bba73b59069934fc3b37`)
     return await res.json()
@@ -122,7 +139,7 @@ async function fetchCast(id){
         cast.forEach(actor => {
             let info = `
             <div class="actor" id="${actor.id}">
-            <h3 class="title"> ${actor.name}</32>
+            <h3 class="title"> ${actor.name}</h3>
             <p> <b>Character name :</b> ${actor.character} </p>
             <a href ="details.html" > <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" ></a>  
             </div>`
@@ -135,5 +152,5 @@ async function fetchCast(id){
 
 
 loopSerial()
-fetchActor(2058151)
-fetchDramaDetails(80018)
+fetchActor(2058151) // for actress Iqra Aziz //
+fetchDramaDetails(80018) // for drama Suno Chanda //
