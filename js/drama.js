@@ -94,7 +94,6 @@ async function fetchDramaDetails(id){
        <div class="details"> 
        <p> <b>First episode :</b> ${data.first_air_date} </p>
        <p> <b>Last episode :</b> ${data.last_air_date} </p>
-       <p> <b>Status :</b> ${data.status}</p>
        <p> <b>Production company :</b> ${data.production_companies[0].name} </p>
        <p> <b>Network :</b> <a href ="${data.homepage}" target = "_blank">${data.networks[0].name}</a> </p>
        <p> <b>Number of episodes :</b> ${data.number_of_episodes}</p>
