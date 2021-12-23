@@ -25,7 +25,7 @@ async function fetchSearchDetails (input){
                 if(search.media_type == "tv"){
                     let filterSerials = userInput.filter(drama => drama.origin_country == "PK")
                     for(let i = 0; i<= data.total_results ; i++){
-                        let html = `<div id = "input.id" class = "drama">
+                        let html = `<div id = "${input.id}" class = "drama">
                         <h2 class = "title"> ${filterSerials[i].name}</h2>
                         <a href ="details.html"> <img src="https://image.tmdb.org/t/p/w300${filterSerials[i].poster_path}" id = "details"></a>
                         </div>`
@@ -36,7 +36,7 @@ async function fetchSearchDetails (input){
                  if(search.media_type == "person"){
                    let filterActors = userInput.filter(actor => actor.known_for_department == "Acting" && actor.known_for[0].origin_country == "PK")
                    for(let i = 0; i<= data.total_results ; i++){
-                       let html = `<div id = "input.id" class = "actor">
+                       let html = `<div id = "${input.id}" class = "actor">
                        <h2 class = "title"> ${filterActors[i].name}</h2>
                        <a href ="details.html"> <img src="https://image.tmdb.org/t/p/w300${filterActors[i].profile_path}" id = "details"></a>
                        </div>`
@@ -82,14 +82,15 @@ async function fetchNewSerial (){
 }
 
 
+// All drama's page //
 
 function loopSerial(){
 for(let i = 1; i<= 13; i++){
-    fetchSerial(i)
+    fetchAllSerials(i)
 }
 };
 
-async function fetchSerial (page){
+async function fetchAllSerials (page){
     let response = await fetch(`http://api.themoviedb.org/3/discover/tv?api_key=daf4ffe88f06bba73b59069934fc3b37&with_original_language=ur&sort_by=original_title.asc&include_adult=false&page=${page}`)
     return await response.json()
     .then (data => {
@@ -100,16 +101,17 @@ async function fetchSerial (page){
             let html = `<div class="drama" id="${serial.id}">
             <h2 class="title"> ${serial.name}</h2>
             <p> <b>First episode :</b> ${serial.first_air_date} </p>
-            <a href ="details.html"> <img src="https://image.tmdb.org/t/p/w200${serial.poster_path}" id = "details"></a>
+            <a href = "details.html" id ="details" ><img src="https://image.tmdb.org/t/p/w200${serial.poster_path}"></a>
             </div>`
             
             let content = document.getElementById("serialData")
             content.insertAdjacentHTML("beforeend", html)
+        })        
 
-        })
 })
 }
 
+ // Actor details //
 
 async function fetchActor (id){
     let response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=daf4ffe88f06bba73b59069934fc3b37`)
@@ -163,6 +165,7 @@ async function fetchFilmography(id){
     })
 }
 
+// Drama details //
 
 async function fetchDramaDetails(id){
     let res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=daf4ffe88f06bba73b59069934fc3b37`)
