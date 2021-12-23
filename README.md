@@ -39,3 +39,8 @@ Used sources - Frontend
 
 ////// GET DATE //////
 => https://www.w3schools.com/js/js_date_methods.asp
+
+
+////// STORE DATA IN LOCAL STORAGE //////
+=> https://www.youtube.com/watch?v=-oS0_6VTP5o&ab_channel=LearnCodeWithMukundProgrammingTutorials
+  => explained in Hindi
