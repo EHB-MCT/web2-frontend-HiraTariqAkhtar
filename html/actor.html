@@ -19,7 +19,10 @@
                     <a href="fav.html">Favourites</a>
                 </ul>
             </nav>
-            <input type="text" placeholder="Search">
+            <form action="">
+                <input type="text" id="userSearch">
+                <input type="submit" value="Search" id="search">
+            </form>
             <ul>
                 <a href="login.html">Login</a>
                 <a href="register.html">Register</a>
@@ -28,6 +31,7 @@
     </header>
 
     <main>
+        <div id="content" class="flex"></div>
         <div id="actorData"></div>
         <div id="allDramas" class="flex"></div>
     </main>
