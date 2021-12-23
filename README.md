@@ -39,8 +39,3 @@ Used sources - Frontend
 
 ////// GET DATE //////
 => https://www.w3schools.com/js/js_date_methods.asp
-
-
-////// MODIFY CHECKBOX //////
-=> Web I excercises session 9
-  => exercises WebI do not have a repo
