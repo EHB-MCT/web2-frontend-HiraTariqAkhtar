@@ -12,6 +12,18 @@ body {
   display: flex;
 }
 
+footer {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3be23f;
+  color: #ffffff;
+  font-weight: 600;
+  height: 5em;
+}
+
 #topNav {
   display: -webkit-box;
   display: -ms-flexbox;

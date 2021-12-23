@@ -16,6 +16,15 @@ body{
     display: flex;
 }
 
+footer{
+   justify-content: space-around;
+   align-items: center;
+   background-color: $green;
+   color: #ffffff;
+   font-weight: 600;
+   height: 5em;
+}
+
 ///// NAVIGATION /////
 #topNav{
     display: flex;
