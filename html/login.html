@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
     <script type="module" src="/js/login.js"></script>
     <title>Login</title>
 </head>
-<body>
-    
+<body id="loginPage">
+    <header>
+        <h1 class="title">Log in</h1>
+        <h3 class="inline_block title">Not a user?</h3>
+        <a href="./register.html" class="link"> Sign up!</a>
+      </header>
+      <main class="flex">
+          <figure>
+              <img src="../logo.png">
+          </figure>
+        <div>
+            <p><b>Fill in your login details:</b></p>
+            <form action="">
+              <input type="text" placeholder="Username" id="username"> <br>
+              <input type="password" placeholder="Password" id="password"> <br>
+              <input type="checkbox" name="stay_logged_in" value="stay_logged_in" id="stay_logged_in">
+              <label for="stay_logged_in">Stay logged in</label> <br>
+              <input type="submit" value="Log in" id="loginButton">
+            </form>
+        </div>
+      </main>
+      <footer class="flex">
+        <p>WebII - Mike Derycke</p>
+        <p>Hira Tariq Akhtar - 2BaMCTB</p>
+        <p>2021-2022</p>
+    </footer>
 </body>
 </html>

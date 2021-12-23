@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
     <script type="module" src="/js/login.js"></script>
     <title>Register</title>
 </head>
-<body>
-    
+<body id="registerPage">
+    <header>
+        <h1 class="title">Register</h1>
+        <h3 class="inline_block title">Already a user?</h3>
+        <a href="./login.html" class="link"> Sign in!</a>
+      </header>
+      <main class="flex">
+          <div>
+              <p><b>Fill in your details:</b></p>
+              <form action="">
+                  <input type="text" placeholder="First name" id="first_name" required><br>
+                  <input type="text" placeholder="Last name" id="last_name" required><br>
+                  <input type="email" placeholder="E-mail adress" id="email" required> <br>
+                  <a href="#createUser" class="btn"> Next</a>
+                </form>
+                <section id="createUser">
+                    <form action="">
+                        <p>Choose a username</p>
+                        <input type="text" placeholder="Username" id="username" required> <br>
+                        <p>Choose a password</p>
+                        <input type="password" placeholder="Password" id="password" required> <br>
+                        <input type="submit" value="Register" id="registerButton">
+                    </form>
+                </section>
+            </div>
+            <img src="../logo.png">
+      </main>
+      <footer class="flex">
+        <p>WebII - Mike Derycke</p>
+        <p>Hira Tariq Akhtar - 2BaMCTB</p>
+        <p>2021-2022</p>
+    </footer>
 </body>
 </html>
