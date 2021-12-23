@@ -1,9 +1,11 @@
-///// KLEUREN /////
+///// COLOURS /////
+
 $blue : #2458a3;
 $yellow: #f2c853;
 $green: #3be23f;
 
 ///// GENERAL CSS /////
+
 body{
     font-family: Helvetica;
 }
@@ -16,6 +18,10 @@ body{
     display: flex;
 }
 
+.inline_block {
+    display: inline-block;
+}
+
 footer{
    justify-content: space-around;
    align-items: center;
@@ -23,9 +29,15 @@ footer{
    color: #ffffff;
    font-weight: 600;
    height: 5em;
+   margin-top: 2em;
+}
+
+.link{
+    color: $yellow;
 }
 
 ///// NAVIGATION /////
+
 #topNav{
     display: flex;
     justify-content: space-between;
@@ -46,7 +58,7 @@ footer{
     }
 
     input{
-        width: 20em;
+        width: 15em;
         height: 3em;
         border: 2px solid $yellow;
         border-radius: 25px;
@@ -56,6 +68,108 @@ footer{
         width: 5em;
         color: #ffffff;
         background-color: $yellow;
+    }
+}
+
+////////////////////// CHECKBOX ///////////////////////
+
+input[type="checkbox"] {
+    position: relative;
+  }
+  
+  input[type="checkbox"]:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 1px solid $yellow;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  
+  input[type="checkbox"]:checked:before {
+    border-color: $green;
+  }
+  
+  input[type="checkbox"]:checked:after {
+    position: absolute;
+    background-color: $green;
+    content: "✓";
+    color: white;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    top: 1px;
+    left: 1px;
+  }
+
+
+////// LOGIN - REGISTER FORM //////
+
+#loginPage, #registerPage{
+    header{
+        text-align: center;
+        margin-bottom: 3.5em;
+    }
+
+    main{
+        margin-bottom: 5em;
+        justify-content: space-around;
+
+        #email{
+            margin-bottom: 2em;
+        }
+
+
+    }
+
+    input{
+        margin: 1.5em 1em 0 0;
+        border: 2px solid $yellow;
+        border-radius: 5px;
+        height: 2em;
+        width: 20em;
+    }
+
+
+    input[type="submit"]{
+        width: 10em;
+        height: 3em;
+        color: #ffffff;
+        background-color: $yellow;
+        border-radius: 15px;
+        font-weight: 600;
+    }
+    .btn{
+        padding: 0.5em 3em;
+        color: #ffffff;
+        background-color: $yellow;
+        border-radius: 15px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    input[type="checkbox"]{
+        height: 15px;
+        width: 15px;
+    }
+
+    #createUser {
+        display: none;
+    }
+
+    #createUser:target{
+        display: block;
+        input{
+            margin-top: 0;
+        }
+    }
+}
+
+#registerPage{
+    #password{
+        margin-bottom: 3em;
     }
 }
 

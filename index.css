@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: Helvetica;
 }
@@ -12,6 +13,10 @@ body {
   display: flex;
 }
 
+.inline_block {
+  display: inline-block;
+}
+
 footer {
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -22,6 +27,11 @@ footer {
   color: #ffffff;
   font-weight: 600;
   height: 5em;
+  margin-top: 2em;
+}
+
+.link {
+  color: #f2c853;
 }
 
 #topNav {
@@ -48,7 +58,7 @@ footer {
 }
 
 #topNav input {
-  width: 20em;
+  width: 15em;
   height: 3em;
   border: 2px solid #f2c853;
   border-radius: 25px;
@@ -58,6 +68,99 @@ footer {
   width: 5em;
   color: #ffffff;
   background-color: #f2c853;
+}
+
+input[type="checkbox"] {
+  position: relative;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: 1px solid #f2c853;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+input[type="checkbox"]:checked:before {
+  border-color: #3be23f;
+}
+
+input[type="checkbox"]:checked:after {
+  position: absolute;
+  background-color: #3be23f;
+  content: "✓";
+  color: white;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  top: 1px;
+  left: 1px;
+}
+
+#loginPage header, #registerPage header {
+  text-align: center;
+  margin-bottom: 3.5em;
+}
+
+#loginPage main, #registerPage main {
+  margin-bottom: 5em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#loginPage main #email, #registerPage main #email {
+  margin-bottom: 2em;
+}
+
+#loginPage input, #registerPage input {
+  margin: 1.5em 1em 0 0;
+  border: 2px solid #f2c853;
+  border-radius: 5px;
+  height: 2em;
+  width: 20em;
+}
+
+#loginPage input[type="submit"], #registerPage input[type="submit"] {
+  width: 10em;
+  height: 3em;
+  color: #ffffff;
+  background-color: #f2c853;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+#loginPage .btn, #registerPage .btn {
+  padding: 0.5em 3em;
+  color: #ffffff;
+  background-color: #f2c853;
+  border-radius: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#loginPage input[type="checkbox"], #registerPage input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+}
+
+#loginPage #createUser, #registerPage #createUser {
+  display: none;
+}
+
+#loginPage #createUser:target, #registerPage #createUser:target {
+  display: block;
+}
+
+#loginPage #createUser:target input, #registerPage #createUser:target input {
+  margin-top: 0;
+}
+
+#registerPage #password {
+  margin-bottom: 3em;
 }
 
 #serialData, #allDramas, #cast, #content {
