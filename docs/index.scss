@@ -71,38 +71,6 @@ footer{
     }
 }
 
-////////////////////// CHECKBOX ///////////////////////
-
-input[type="checkbox"] {
-    position: relative;
-  }
-  
-  input[type="checkbox"]:before {
-    content: "";
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    border: 1px solid $yellow;
-    border-radius: 3px;
-    display: inline-block;
-  }
-  
-  input[type="checkbox"]:checked:before {
-    border-color: $green;
-  }
-  
-  input[type="checkbox"]:checked:after {
-    position: absolute;
-    background-color: $green;
-    content: "✓";
-    color: white;
-    text-align: center;
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    top: 1px;
-    left: 1px;
-  }
 
 
 ////// LOGIN - REGISTER FORM //////
@@ -148,11 +116,6 @@ input[type="checkbox"] {
         border-radius: 15px;
         font-weight: 600;
         text-decoration: none;
-    }
-
-    input[type="checkbox"]{
-        height: 15px;
-        width: 15px;
     }
 
     #createUser {
