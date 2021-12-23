@@ -7,6 +7,7 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/login.js":
@@ -15,7 +16,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack:///./src/login.js?");
+eval("\n\nsaveData()\n\nfunction saveData(){\n    //get values\n    let username = document.getElementById(\"username\").value;\n    let password = document.getElementById(\"password\").value;\n    \n    // save in local storage\n    localStorage.setItem(\"username\", username);\n    localStorage.setItem(\"password\", password);\n}\n\n\n//# sourceURL=webpack:///./src/login.js?");
 
 /***/ })
 
