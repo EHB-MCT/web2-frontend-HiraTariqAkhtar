@@ -54,12 +54,18 @@ footer {
   border-radius: 25px;
 }
 
-#serialData, #allDramas, #cast {
+#topNav input[type="submit"] {
+  width: 5em;
+  color: #ffffff;
+  background-color: #f2c853;
+}
+
+#serialData, #allDramas, #cast, #content {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-#serialData .drama, #serialData .actor, #allDramas .drama, #allDramas .actor, #cast .drama, #cast .actor {
+#serialData .drama, #serialData .actor, #allDramas .drama, #allDramas .actor, #cast .drama, #cast .actor, #content .drama, #content .actor {
   margin: 1em;
   border: 2px solid #2458a3;
   text-align: center;

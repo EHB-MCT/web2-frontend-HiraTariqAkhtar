@@ -50,13 +50,18 @@ footer{
         height: 3em;
         border: 2px solid $yellow;
         border-radius: 25px;
+    }
 
+    input[type="submit"]{
+        width: 5em;
+        color: #ffffff;
+        background-color: $yellow;
     }
 }
 
 ///// DATA /////
 
-#serialData, #allDramas, #cast{
+#serialData, #allDramas, #cast, #content{
     flex-wrap: wrap;
 
     
