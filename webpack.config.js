@@ -1,9 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/drama.js',
+  entry:{
+   drama: './src/drama.js',
+   login: './src/login.js'
+  } ,
   output: {
-    filename: 'main.js',
     path: path.resolve(__dirname, 'docs'),
+    filename: '[name].js',
   },
+  mode: 'development'
 };
